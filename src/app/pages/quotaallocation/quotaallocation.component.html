@@ -1,0 +1,75 @@
+<nb-card>
+    <nb-card-header> Quota Allocation</nb-card-header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group form-inline right">
+                        Search:
+                        <input class="form-control ml-2" type="text" [formControl]="filter" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">OUName</th>
+                    <th scope="col">Project Name</th>
+                    <th scope="col">Cloud Type</th>
+                    <th scope="col">Total Allocation</th>
+                    <th scope="col">Consumption</th>
+                    <th scope="col">NewAllocation</th>
+                    <th scope="col">Approved</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let qa of qas$ | async | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <p class="">
+                            <ngb-highlight [result]="qa.OUName" [term]="filter.value"></ngb-highlight>
+                        </p>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="qa.ProjectName" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="qa.CloudType" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td colspan="3">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" 
+                            [ngStyle]="{ 'width': qa.TotalAllocation.per+ '%' }">
+                                ${{qa.TotalAllocation.amt}}
+                            </div>
+                            <div class="progress-bar progress-bar-warning" role="progressbar"  [ngStyle]="{ 'width': qa.Consumption.per+ '%' }">
+                                ${{qa.Consumption.amt}}
+                            </div>
+                            <div class="progress-bar progress-bar-danger" role="progressbar"  [ngStyle]="{ 'width': qa.NewAllocation.per+ '%' }">
+                                ${{qa.NewAllocation.amt}}
+                            </div>
+                       <!--     <div class="progress-bar progress-bar-free" role="progressbar" style="width:30%">
+                                $1200
+                            </div>-->
+                        </div>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="qa.Approved" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <div style="display: flex;"><i class="nb-edit edit"></i>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</nb-card>

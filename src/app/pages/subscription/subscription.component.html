@@ -1,0 +1,1049 @@
+<nb-card>
+  <nb-card-header> Subscriptions</nb-card-header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <button mat-raised-button color="primary" class="pos" (click)="addsub(content)">
+          <mat-icon>add</mat-icon>
+        </button>
+        <mat-tab-group (selectedTabChange)="onLinkClick($event)">
+          <mat-tab label="AWS">
+            <ng-template mat-tab-label>
+              <mat-icon>home</mat-icon>
+              AWS
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Subscription Name</th>
+                        <th>Subscription ID</th>
+                        <th>Quota</th>
+                        <th>Consumption</th>
+                        <th>No Of OU</th>
+                        <th>No Of Projects</th>
+                        <th>Owner</th>
+
+                        <th>Edit/Delete</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </ng-template>
+
+          </mat-tab>
+          <mat-tab label="AZURE">
+
+            <ng-template mat-tab-label>
+              <mat-icon>face</mat-icon>
+              AZURE
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Subscription Name</th>
+                        <th>Subscription ID</th>
+                        <th>Quota</th>
+                        <th>Consumption</th>
+                        <th>No Of OU</th>
+                        <th>No Of Projects</th>
+                        <th>Owner</th>
+
+                        <th>Edit/Delete</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="GOOGLE">
+            <ng-template mat-tab-label>
+              <mat-icon>email</mat-icon>
+              GOOGLE
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Subscription Name</th>
+                        <th>Subscription ID</th>
+                        <th>Quota</th>
+                        <th>Consumption</th>
+                        <th>No Of OU</th>
+                        <th>No Of Projects</th>
+                        <th>Owner</th>
+
+                        <th>Edit/Delete</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="ALL">
+            <ng-template mat-tab-label>
+              <mat-icon>settings</mat-icon>
+              ALL
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Subscription Name</th>
+                        <th>Subscription ID</th>
+                        <th>Quota</th>
+                        <th>Consumption</th>
+                        <th>No Of OU</th>
+                        <th>No Of Projects</th>
+                        <th>Owner</th>
+
+                        <th>Edit/Delete</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Airi Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Brielle Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Herrod Chandler</td>
+                        <td>Sales Assistant</td>
+                        <td>San Francisco</td>
+                        <td>59</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Rhona Davidson</td>
+                        <td>Integration Specialist</td>
+                        <td>Tokyo</td>
+                        <td>55</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Colleen Hurst</td>
+                        <td>Javascript Developer</td>
+                        <td>San Francisco</td>
+                        <td>39</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Sonya Frost</td>
+                        <td>Software Engineer</td>
+                        <td>Edinburgh</td>
+                        <td>23</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Jena Gaines</td>
+                        <td>Office Manager</td>
+                        <td>London</td>
+                        <td>30</td>
+                        <td>61</td>
+                        <td>5</td>
+                        <td>John Doe</td>
+
+                        <td>
+                          <div style="display: flex;"><i (click)="editsub(editcontentView)"
+                              class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </ng-template>
+          </mat-tab>
+
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{tabvalue}}</h4>
+
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="">
+        <mat-tab-group *ngIf='tabvalue == "AWS"' class="Tabs">
+          <mat-tab label="AWSAdd">
+            <ng-template mat-tab-label>
+              <mat-icon>add</mat-icon>
+              Add New
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="form-group">
+                <select class="form-control" id="sel1">
+                  <option>Please Choose </option>
+                  <option [selected]="tabvalue == 'AWS'">AWS</option>
+                  <option [selected]="tabvalue == 'GOOGLE'">GOOGLE</option>
+                  <option [selected]="tabvalue == 'AZURE'">AZURE</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">Subscription Name:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">Access Key:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">Secret Key:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="AwsBilling">
+            <ng-template mat-tab-label>
+              <mat-icon>payment</mat-icon>
+              Billing
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="form-group">
+                <label for="Buket">Buket Name:</label>
+                <input type="text" class="form-control" id="Buket">
+              </div>
+              <div class="form-group">
+                <label for="Report">Report Name:</label>
+                <input type="text" class="form-control" id="Report">
+              </div>
+              <div class="form-group">
+                <label for="Prefix">Prefix Name:</label>
+                <input type="text" class="form-control" id="Prefix">
+              </div>
+              <div class="form-group">
+                <label for="Subscriptions">Subscriptions:</label>
+                <input type="text" class="form-control" id="Subscriptions">
+              </div>
+              <div class="form-group">
+                <label for="Location">Location:</label>
+                <input type="text" class="form-control" id="Location">
+              </div>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+        <!--AZURE-->
+
+        <div *ngIf='tabvalue == "AZURE"'>
+          <div class="form-group">
+            <select class="form-control" id="sel1">
+              <option>Please Choose </option>
+              <option [selected]="tabvalue == 'AWS'">AWS</option>
+              <option [selected]="tabvalue == 'GOOGLE'">GOOGLE</option>
+              <option [selected]="tabvalue == 'AZURE'">AZURE</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Subscription Name:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Subscription ID:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Tenat ID:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Application ID:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Secret Key:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+        </div>
+        <!--Google-->
+        <mat-tab-group *ngIf='tabvalue == "GOOGLE"' class="Tabs">
+          <mat-tab label="GooglrAdd">
+            <ng-template mat-tab-label>
+              <mat-icon>add</mat-icon>
+              Add New
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="form-group">
+                <select class="form-control" id="sel1">
+                  <option>Please Choose </option>
+                  <option [selected]="tabvalue == 'AWS'">AWS</option>
+                  <option [selected]="tabvalue == 'GOOGLE'">GOOGLE</option>
+                  <option [selected]="tabvalue == 'AZURE'">AZURE</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">Subscription Name:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">Project ID:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">API Key:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+              <div class="form-group">
+                <label for="ouadmin">Service Account Key:</label>
+                <input type="text" class="form-control" id="ouadmin">
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="GoogleBilling">
+            <ng-template mat-tab-label>
+              <mat-icon>payment</mat-icon>
+              Billing
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="form-group">
+                <label for="Subscriptions">Subscriptions:</label>
+                <input type="text" class="form-control" id="Subscriptions">
+              </div>
+              <div class="form-group">
+                <label for="Account">Account Name:</label>
+                <input type="text" class="form-control" id="Account">
+              </div>
+              <div class="form-group">
+                <label for="AccountId">Billing AccountId:</label>
+                <input type="text" class="form-control" id="AccountId">
+              </div>
+              <div class="form-group">
+                <label for="ProjectId">ProjectId:</label>
+                <input type="text" class="form-control" id="ProjectId">
+              </div>
+              <div class="form-group">
+                <label for="DatasetId">BigQuery DatasetId:</label>
+                <input type="text" class="form-control" id="DatasetId">
+              </div>
+              <div class="form-group">
+                <label for="BigQuery">BigQuery TableId:</label>
+                <input type="text" class="form-control" id="BigQuery">
+              </div>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+        <div *ngIf='tabvalue == "ALL"'>
+          <div class="form-group">
+            <select class="form-control" id="sel1">
+              <option>Please Choose </option>
+              <option [selected]="tabvalue == 'AWS'">AWS</option>
+              <option [selected]="tabvalue == 'GOOGLE'">GOOGLE</option>
+              <option [selected]="tabvalue == 'AZURE'">AZURE</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Subscription Name:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Project ID:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">API Key:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+          <div class="form-group">
+            <label for="ouadmin">Service Account Key:</label>
+            <input type="text" class="form-control" id="ouadmin">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Submit</button>
+    </div>
+  </ng-template>

@@ -1,0 +1,81 @@
+// themes - our custom or/and out of the box themes
+@import 'themes';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+@import '~@nebular/bootstrap/styles/globals';
+// ...
+
+// global app font size
+@import './font-size';
+
+// loading progress bar theme
+@import './pace.theme';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+  @include nb-bootstrap-global();
+
+  // loading progress bar
+  @include ngx-pace-theme();
+};
+.mat-tab-header{
+  padding-left:60px;
+}
+mat-slider {
+  width: 300px;
+}
+.mat-slider.mat-slider-horizontal .mat-slider-wrapper {
+  top: 18px;
+}
+.mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+  height: 12px;
+  border-radius: 10px
+}
+.mat-slider.mat-slider-horizontal .mat-slider-track-background,
+.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  height: 100%;
+}
+//.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  //background-color: #000066;
+//}
+.mat-accent .mat-slider-thumb {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: solid 2px gray;
+  bottom: -20px;
+  right: -20px;
+}
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+  background-color: white;
+}
+.mat-raised-button.mat-primary {
+  background-color: #000066;
+}
+
+.Tabs mat-tab-header{
+  background: #c9c9c3;
+  margin-bottom:15px; 
+}
+.infoi{
+  font-size: 25px;
+    margin: 3px;
+    color: #000066;
+    cursor: pointer;
+}
+.delete{
+  color: #ff386a;
+  font-size: 30px;
+  cursor: pointer;
+}
+.edit{
+  color: #111010;
+  font-size: 30px;
+  cursor: pointer;
+}

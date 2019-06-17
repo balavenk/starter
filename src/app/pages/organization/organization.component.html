@@ -1,0 +1,273 @@
+<nb-card>
+    <nb-card-header> Organizational unit</nb-card-header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                        <button mat-raised-button color="primary"  (click)="open(content)">
+                            <mat-icon>add</mat-icon>
+                        </button>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group form-inline right">
+                        Search:
+                        <input class="form-control ml-2" type="text" [formControl]="filter" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">OUName</th>
+                    <th scope="col">OUAdmin</th>
+                    <th scope="col">TotalProjects</th>
+                    <th scope="col">Clouds</th>
+                    <th scope="col">TotalResources</th>
+                    <th scope="col">TotalCost</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ou of ous$ | async; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <p class="viewou" (click)="OuView(contentView)">
+                            <ngb-highlight [result]="ou.OUName" [term]="filter.value"></ngb-highlight>
+                        </p>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ou.OUAdmin" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ou.TotalProjects" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ou.Clouds" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ou.TotalResources" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="ou.TotalCost" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <div style="display: flex;"><i (click)="Ouedit(editcontentView)" class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</nb-card>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add New OU</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label for="ouname">OU Name:</label>
+                <input type="text" class="form-control" id="ouname">
+            </div>
+            <div class="form-group">
+                <label for="ouadmin">OU Admin:</label>
+                <input type="text" class="form-control" id="ouadmin">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Clouds:</label>
+                <select class="form-control" id="sel1" multiple>
+                    <option>AWS</option>
+                    <option>Azure</option>
+                    <option>Google</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Quota Allocated:</label><br>
+                <mat-slider 
+                thumbLabel
+                [displayWith]="formatLabel"
+                tickInterval="1000"
+                min="1"
+                step = "1"
+                max="100000"></mat-slider>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Project Details</h3>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-info btn-sm pull-left">Add Project</button>
+                </div>
+            </div><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Project Description</th>
+                        <th>Deployed on</th>
+                        <th>Total Cost</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>XXX</td>
+                        <td>Good</td>
+                        <td>AWS</td>
+                        <td>$90000</td>
+                        <td><i class="nb-edit"></i><i class="nb-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="c('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<ng-template #contentView let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">OU Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label for="ouname">OU Name:</label>
+                Sample 1
+            </div>
+            <div class="form-group">
+                <label for="ouadmin">OU Admin:</label>
+                John Wick
+            </div>
+            <div class="form-group">
+                <label for="sel1">Clouds:</label>
+                AWS
+            </div>
+            <div class="form-group">
+                <label for="qa">Quota Allocated:</label>
+              70%
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Project Details</h3>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Project Description</th>
+                        <th>Deployed on</th>
+                        <th>Total Cost</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>XXX</td>
+                        <td>Good</td>
+                        <td>Linux</td>
+                        <td>$90000</td>
+
+                        <td><i class="nb-edit"></i><i class="nb-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+<ng-template #editcontentView let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Edit OU</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label for="ouname">OU Name:</label>
+                <input type="text" class="form-control" id="ouname" value="Sample 1">
+            </div>
+            <div class="form-group">
+                <label for="ouadmin">OU Admin:</label>
+                <input type="text" class="form-control" id="ouadmin" value="John Wick">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Clouds:</label>
+                <select class="form-control" id="sel1" multiple>
+                    <option>AWS</option>
+                    <option>Azure</option>
+                    <option>Google</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Quota Allocated:</label>
+                <br>
+                <mat-slider 
+                thumbLabel
+                [displayWith]="formatLabel"
+                tickInterval="1000"
+                min="1"
+                step = "1"
+                max="100000"></mat-slider>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Project Details</h3>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-info btn-sm pull-left">Add Project</button>
+                </div>
+            </div><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Project Description</th>
+                        <th>Deployed on</th>
+                        <th>Total Cost</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>XXX</td>
+                        <td>Good</td>
+                        <td>AWS</td>
+                        <td>$90000</td>
+
+                        <td><i class="nb-edit"></i><i class="nb-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="c('Save click')">Update</button>
+    </div>
+</ng-template>

@@ -1,0 +1,51 @@
+
+
+.viewou:hover{
+    text-decoration:underline;
+    cursor: pointer;
+    color:blue;
+}
+.viewou{
+    color:blue;
+}
+.right{
+    float: right;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+  }
+
+  nb-progress-bar {
+    flex: 1;
+  }
+
+  .delete{
+    color: #ff386a;
+    font-size: 30px;
+  }
+  .edit{
+    color: #111010;
+    font-size: 30px;
+  }
+
+  label{
+    font-weight: 700
+  }
+
+  .progress-bar-succes{
+
+    background-color: #3f9b09
+  }
+  .progress-bar-warning{
+
+    background-color: #141b7e
+  }
+  .progress-bar-danger{
+    background-color: #ff9838
+  }
+  .progress-bar-free{
+    
+    background-color: #797776
+  }

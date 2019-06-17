@@ -1,0 +1,337 @@
+<nb-card>
+    <nb-card-header> Project</nb-card-header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                        <button mat-raised-button color="primary" (click)="projectadd(content)">
+                            <mat-icon>add</mat-icon>
+                        </button>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group form-inline right">
+                        Search:
+                        <input class="form-control ml-2" type="text" [formControl]="filter" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Project Name</th>
+                    <th scope="col">Project Description</th>
+                    <th scope="col">OU</th>
+                    <th scope="col">Deployed on</th>
+                    <th scope="col">TotalCost</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let project of projects$ | async; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <p class="viewou" (click)="projectView(contentView)">
+                            <ngb-highlight [result]="project.projectname" [term]="filter.value"></ngb-highlight>
+                        </p>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="project.projectDescription" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="project.OU" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="project.Deployedon" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <ngb-highlight [result]="project.TotalCost" [term]="filter.value"></ngb-highlight>
+                    </td>
+                    <td>
+                        <div style="display: flex;"><i (click)="projectedit(editcontentView)"
+                                class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</nb-card>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add New Project</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label for="ouname">OU Name:</label>
+                <select class="form-control" id="sel1">
+
+                    <option selected>Please Choose </option>
+                    <option>Sample 1</option>
+                    <option>Sample 2</option>
+                    <option>Sample 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ouadmin">Project Name:</label>
+                <input type="text" class="form-control" id="ouadmin">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Environments:</label>
+                <select class="form-control" id="sel1">
+                    <option selected>Please Choose </option>
+                    <option>Dev</option>
+                    <option>QA Production</option>
+                    <option>Test</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Cost Center:</label>
+                <select class="form-control" id="sel1">
+
+                    <option selected>Please Choose </option>
+                    <option>CC 1</option>
+                    <option>CC 2</option>
+                    <option>CC 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Clouds:</label>
+                <select class="form-control" id="sel1">
+
+                    <option selected>Please Choose </option>
+                    <option>AWS</option>
+                    <option>Azure</option>
+                    <option>Google</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Quota Allocated:</label><br>
+                <mat-slider 
+                thumbLabel
+                [displayWith]="formatLabel"
+                tickInterval="1000"
+                min="1"
+                step = "1"
+                max="100000"></mat-slider>
+            </div>
+            <div class="form-group">
+                <label for="qa">Description:</label>
+                <textarea class="form-control" placeholder="Type text...." rows="3" shape="round"></textarea>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Members</h3>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-info btn-sm pull-left">Add Member</button>
+                </div>
+            </div><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>john@gmail.com</td>
+                        <td>Admin</td>
+                        <td><i class="nb-edit"></i><i class="nb-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="c('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<ng-template #contentView let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Project Details</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label for="ouname">OU Name:</label>
+                Sample 1
+            </div>
+            <div class="form-group">
+                <label for="ouadmin">Project Name:</label>
+                Project 1
+            </div>
+            <div class="form-group">
+                <label for="sel1">Environments:</label>
+                Dev
+            </div>
+            <div class="form-group">
+                <label for="qa">Cost Center:</label>
+                CC 1
+            </div>
+            <div class="form-group">
+                <label for="qa">Clouds:</label>
+                AWS
+            </div>
+            <div class="form-group">
+                <label for="qa">Quota Allocated:</label>
+                70%
+            </div>
+            <div class="form-group">
+                <label for="qa">Description:</label>
+                <textarea class="form-control" placeholder="Type text...." rows="3" shape="round"></textarea>
+            </div>
+            <div class="form-group">
+                    <label for="qa">Architecture Image:</label>
+                </div>	
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Members</h3>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>john@gmail.com</td>
+                        <td>Admin</td>
+                        <td><i class="nb-edit"></i><i class="nb-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+<ng-template #editcontentView let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Edit Project</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form action="">
+            <div class="form-group">
+                <label for="ouname">OU Name:</label>
+                <select class="form-control" id="sel1">
+
+                    <option>Please Choose </option>
+                    <option selected>Sample 1</option>
+                    <option>Sample 2</option>
+                    <option>Sample 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ouadmin">Project Name:</label>
+                <input type="text" class="form-control" value="Project 1">
+            </div>
+            <div class="form-group">
+                <label for="sel1">Environments:</label>
+                <select class="form-control" id="sel1">
+                    <option>Please Choose </option>
+                    <option selected>Dev</option>
+                    <option>QA Production</option>
+                    <option>Test</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Cost Center:</label>
+                <select class="form-control" id="sel1">
+
+                    <option>Please Choose </option>
+                    <option selected>CC 1</option>
+                    <option>CC 2</option>
+                    <option>CC 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Clouds:</label>
+                <select class="form-control" id="sel1">
+
+                    <option>Please Choose </option>
+                    <option selected>AWS</option>
+                    <option>Azure</option>
+                    <option>Google</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qa">Quota Allocated:</label><br>
+                <mat-slider 
+                thumbLabel
+                [displayWith]="formatLabel"
+                tickInterval="1000"
+                min="1"
+                max="100000"></mat-slider>
+            </div>
+            <div class="form-group">
+                <label for="qa">Description:</label>
+                <textarea class="form-control" placeholder="Type text...." rows="3" shape="round"></textarea>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Members</h3>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-info btn-sm pull-left">Add Member</button>
+                </div>
+            </div><br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>john@gmail.com</td>
+                        <td>Admin</td>
+                        <td><i class="nb-edit"></i><i class="nb-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="c('Save click')">Update</button>
+    </div>
+</ng-template>

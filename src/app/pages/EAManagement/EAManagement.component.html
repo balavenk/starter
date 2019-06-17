@@ -1,0 +1,403 @@
+<nb-card>
+  <nb-card-header> EA Management</nb-card-header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <button mat-raised-button color="primary" class="pos" (click)="addEA(content)">
+          <mat-icon>add</mat-icon>
+        </button>
+        <mat-tab-group (selectedTabChange)="onLinkClick($event)">
+          <mat-tab label="AWSEA">
+            <ng-template mat-tab-label>
+              <mat-icon>home</mat-icon>
+              AWS EA
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Resource Type</th>
+                        <th>Instance Type</th>
+                        <th>Spec</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                        <th>Created By</th>
+                        <th>Created Date</th>
+                        <th>Last Modified By</th>
+                        <th>Last Modified Date</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>Virtual Machine</td>
+                        <td>B15</td>
+                        <td>B1-Ds1</td>
+                        <td>Description...</td>
+                        <td>HR</td>
+                        <td>50</td>
+                        <td>17</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+
+                        <td>
+                          <div style="display: flex;">
+                            <i (click)="editrow(editcontentView)" class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                            <mat-icon class="infoi" (click)="viewrow(contentView)">info</mat-icon>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </ng-template>
+
+          </mat-tab>
+          <mat-tab label="AZUREEA">
+
+            <ng-template mat-tab-label>
+              <mat-icon>face</mat-icon>
+              AZURE EA
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Resource Type</th>
+                        <th>Instance Type</th>
+                        <th>Spec</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                        <th>Created By</th>
+                        <th>Created Date</th>
+                        <th>Last Modified By</th>
+                        <th>Last Modified Date</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>Virtual Machine</td>
+                        <td>B15</td>
+                        <td>B1-Ds1</td>
+                        <td>Description...</td>
+                        <td>HR</td>
+                        <td>50</td>
+                        <td>17</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+
+                        <td>
+                          <div style="display: flex;">
+                            <i (click)="editrow(editcontentView)" class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                            <mat-icon class="infoi" (click)="viewrow(contentView)">info</mat-icon>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="GOOGLEEA">
+            <ng-template mat-tab-label>
+              <mat-icon>email</mat-icon>
+              GOOGLE EA
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Resource Type</th>
+                        <th>Instance Type</th>
+                        <th>Spec</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                        <th>Created By</th>
+                        <th>Created Date</th>
+                        <th>Last Modified By</th>
+                        <th>Last Modified Date</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>Virtual Machine</td>
+                        <td>B15</td>
+                        <td>B1-Ds1</td>
+                        <td>Description...</td>
+                        <td>HR</td>
+                        <td>50</td>
+                        <td>17</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+
+                        <td>
+                          <div style="display: flex;">
+                            <i (click)="editrow(editcontentView)" class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                            <mat-icon class="infoi" (click)="viewrow(contentView)">info</mat-icon>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="ALLEA">
+            <ng-template mat-tab-label>
+              <mat-icon>settings</mat-icon>
+              ALL EA
+            </ng-template>
+            <ng-template matTabContent>
+              <div class="body">
+                <div class="table-responsive">
+
+                  <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                    <thead>
+                      <tr>
+                        <th>Resource Type</th>
+                        <th>Instance Type</th>
+                        <th>Spec</th>
+                        <th>Description</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                        <th>Created By</th>
+                        <th>Created Date</th>
+                        <th>Last Modified By</th>
+                        <th>Last Modified Date</th>
+                        <th>Action</th>
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                      <tr>
+                        <td>Virtual Machine</td>
+                        <td>B15</td>
+                        <td>B1-Ds1</td>
+                        <td>Description...</td>
+                        <td>HR</td>
+                        <td>50</td>
+                        <td>17</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+
+                        <td>
+                          <div style="display: flex;">
+                            <i (click)="editrow(editcontentView)" class="nb-edit edit"></i>&nbsp;
+                            <i class="nb-trash delete"></i>
+                            <mat-icon class="infoi" (click)="viewrow(contentView)">info</mat-icon>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add new EA </h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="">
+
+        <div class="form-group">
+          <label for="Resource">Resource Type</label>
+          <input type="text" class="form-control" id="Resource">
+        </div>
+        <div class="form-group">
+          <label for="Instance">Instance Type</label>
+          <input type="text" class="form-control" id="Instance">
+        </div>
+        <div class="form-group">
+          <label for="Spec">Spec</label>
+          <input type="text" class="form-control" id="Spec">
+        </div>
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <input type="text" class="form-control" id="Description">
+        </div>
+        <div class="form-group">
+          <label for="Unit">Unit</label>
+          <input type="text" class="form-control" id="Unit">
+        </div>
+        <div class="form-group">
+          <label for="Price">Price</label>
+          <input type="text" class="form-control" id="Price">
+        </div>
+        <div class="form-group">
+          <label for="createdby">Created By</label>
+          <input type="text" class="form-control" id="createdby">
+        </div>
+        <div class="form-group">
+          <label for="createdate">Created Date</label>
+          <input type="text" class="form-control" id="createdate">
+        </div>
+        <div class="form-group">
+          <label for="lmb">Last Modified By</label>
+          <input type="text" class="form-control" id="lmb">
+        </div>
+
+        <div class="form-group">
+          <label for="lmd">Last Modified Date</label>
+          <input type="text" class="form-control" id="lmd">
+        </div>
+
+
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Submit</button>
+    </div>
+  </ng-template>
+  <ng-template #editcontentView let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit EA </h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="">
+        <div class="form-group">
+          <label for="Resource">Resource Type</label>
+          <input type="text" class="form-control" id="Resource" value="Virtual Machine">
+        </div>
+        <div class="form-group">
+          <label for="Instance">Instance Type</label>
+          <input type="text" class="form-control" id="Instance" value="B15">
+        </div>
+        <div class="form-group">
+          <label for="Spec">Spec</label>
+          <input type="text" class="form-control" id="Spec" value="B1-Ds1">
+        </div>
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <input type="text" class="form-control" id="Description" value="Description..">
+        </div>
+        <div class="form-group">
+          <label for="Unit">Unit</label>
+          <input type="text" class="form-control" id="Unit" value="HR">
+        </div>
+        <div class="form-group">
+          <label for="Price">Price</label>
+          <input type="text" class="form-control" id="Price" value="50">
+        </div>
+        <div class="form-group">
+          <label for="createdby">Created By</label>
+          <input type="text" class="form-control" id="createdby" value="17">
+        </div>
+        <div class="form-group">
+          <label for="createdate">Created Date</label>
+          <input type="text" class="form-control" id="createdate">
+        </div>
+        <div class="form-group">
+          <label for="lmb">Last Modified By</label>
+          <input type="text" class="form-control" id="lmb" value="1">
+        </div>
+
+        <div class="form-group">
+          <label for="lmd">Last Modified Date</label>
+          <input type="text" class="form-control" id="lmd" value="">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Submit</button>
+    </div>
+  </ng-template>
+
+  <ng-template #contentView let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">View EA </h4>
+     <!-- <button mat-raised-button style="margin-left:15px " (click)="editrow(editcontentView)">
+          <mat-icon>edit</mat-icon>
+        </button>-->
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="">
+        <div class="form-group">
+          <label for="Resource">Resource Type:</label>Virtual Machine
+        </div>
+        <div class="form-group">
+          <label for="Instance">Instance Type:</label>B15
+        </div>
+        <div class="form-group">
+          <label for="Spec">Spec:</label>B1-Ds1
+        </div>
+        <div class="form-group">
+          <label for="Description">Description:</label>Description..
+        </div>
+        <div class="form-group">
+          <label for="Unit">Unit:</label>HR
+        </div>
+        <div class="form-group">
+          <label for="Price">Price:</label>50
+        </div>
+        <div class="form-group">
+          <label for="createdby">Created By:</label>17
+        </div>
+        <div class="form-group">
+          <label for="createdate">Created Date:</label>
+        </div>
+        <div class="form-group">
+          <label for="lmb">Last Modified By:</label>1
+        </div>
+
+        <div class="form-group">
+          <label for="lmd">Last Modified Date:</label>
+        </div>
+      </form>
+    </div>
+  </ng-template>

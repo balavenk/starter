@@ -1,0 +1,33 @@
+
+.pos{position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;}
+.viewou:hover{
+    text-decoration:underline;
+    cursor: pointer;
+    color:blue;
+}
+.viewou{
+    color:blue;
+}
+.right{
+    float: right;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+  }
+
+  nb-progress-bar {
+    flex: 1;
+  }
+
+ 
+  label{
+    font-weight: 700
+  }
+.table-responsive{
+  margin-top: 20px;
+}
