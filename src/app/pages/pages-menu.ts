@@ -32,11 +32,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/EAManagement',
 
     },
-
     {
         title: 'Quota Allocation',
         icon: 'nb-drops',
         link: '/pages/quotaallocation',
     },
+
+    {
+        title: 'Hr List',
+        icon: 'nb-list',
+        link: '/pages/hrlist',
+    }
 
 ];

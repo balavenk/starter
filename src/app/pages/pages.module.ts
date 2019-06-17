@@ -11,6 +11,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { SubscriptionModule } from './subscription/subscription.module';
 import { QuotaallocationModule } from './quotaallocation/quotaallocation.module';
 import { EAManagementModule } from './EAManagement/EAManagement.module';
+import { HrlistModule } from './hrlist/hrlist.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent
@@ -23,7 +24,7 @@ const PAGES_COMPONENTS = [
     DashboardModule,
     MiscellaneousModule,OrganizationModule,ProjectsModule,
     MatSliderModule,SubscriptionModule,QuotaallocationModule,
-    EAManagementModule
+    EAManagementModule, HrlistModule
   ],
   declarations: [
     PAGES_COMPONENTS,

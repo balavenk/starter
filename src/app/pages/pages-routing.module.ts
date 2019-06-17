@@ -9,6 +9,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { QuotaallocationComponent } from './quotaallocation/quotaallocation.component';
 import { EAManagementComponent } from './EAManagement/EAManagement.component';
+import { HrlistComponent } from './hrlist/hrlist.component';
+
 
 
 const routes: Routes = [{
@@ -39,6 +41,9 @@ const routes: Routes = [{
     },{
       path: 'EAManagement',
       component: EAManagementComponent,
+    },{
+      path: 'hrlist',
+      component: HrlistComponent,
     },
   ],
 }];

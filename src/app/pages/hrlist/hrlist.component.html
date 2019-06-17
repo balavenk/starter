@@ -1,0 +1,43 @@
+<nb-card>
+  <nb-card-header> HRL List</nb-card-header>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-6">
+              <form>
+                  <div class="form-group form-inline right">
+                      Search:
+                      <input class="form-control ml-2" type="text" [formControl]="filter" />
+                  </div>
+              </form>
+          </div>
+      </div>
+
+      <table class="table table-bordered table-striped table-hover ">
+          <thead>
+              <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Code</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let hritem of hrList; index as i">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>
+                      <p >
+                          <ngb-highlight [result]="hritem.code"></ngb-highlight>
+                      </p>
+                  </td>
+                  <td>
+                    <p >
+                        <ngb-highlight [result]="hritem.name"></ngb-highlight>
+                    </p>
+                  </td>
+                  <td>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</nb-card>
